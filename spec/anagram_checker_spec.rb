@@ -25,10 +25,10 @@ describe AnagramChecker do
       expect(AnagramChecker.find_anagrams('listen', 'apple, window')).to eq([])
     end
 
-    it 'can process large numbers of inputs' do
+    it 'can process large number of inputs' do
       # skip
       n = 1_000_000
-      input = 'word' * n
+      input = 'word ' * n
       puts "Time to process #{n} records"
       puts Benchmark.measure { AnagramChecker.find_anagrams('listen', input) }
       expect(true).to eq(true)

@@ -1,8 +1,7 @@
 class Anagram
-
   def find_anagrams(subject, str)
-  subject = process_word(subject)
-  process_input(str).map{|word| word if anagram?(subject, process_word(word))}.compact
+    subject = process_word(subject)
+    process_input(str).map { |word| word if anagram?(subject, process_word(word)) }.compact
   end
 
   private
@@ -18,5 +17,4 @@ class Anagram
   def anagram?(subject, word)
     (subject - word).empty?
   end
-
 end

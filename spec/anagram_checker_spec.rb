@@ -44,4 +44,14 @@ describe AnagramChecker do
       expect(AnagramChecker.any_anagrams?('listen', 'apple, window')).to eq(false)
     end
   end
+
+  describe '#anagrams?' do
+    it 'returns true if two strings are anagrams of each other' do
+      expect(AnagramChecker.anagrams?('a cat on a mat', 'a cat on a mat')).to eq(true)
+    end
+
+    it 'returns false if two strings are not anagrams of each other' do
+      expect(AnagramChecker.anagrams?('a cat on a mat', 'a cat')).to eq(false)
+    end
+  end
 end

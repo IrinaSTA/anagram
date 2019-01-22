@@ -1,33 +1,35 @@
 class AnagramChecker
 
-  def self.anagrams?(subject, str)
-    same_arr?(char_arr(subject), char_arr(str))
-  end
-
   def self.find_anagrams(subject, str)
-    subject = char_arr(subject)
-    get_word_list(str).map { |word| word if same_arr?(subject, char_arr(word)) }.compact
+    subject = char(subject)
+    get_word_list(str)
+      .map { |word| word if same?(subject, char(word)) }
+      .compact
   end
 
   def self.any_anagrams?(subject, str)
-    subject = char_arr(subject)
+    subject = char(subject)
     get_word_list(str).each do |word|
-      return true if same_arr?(subject, char_arr(word))
+      return true if same?(subject, char(word))
     end
     false
   end
 
-  def self.char_arr(word)
-    word.downcase.split(//)
+  def self.anagrams?(subject, str)
+    same?(char(subject), char(str))
   end
 
-  def self.same_arr?(arr1, arr2)
-    (arr1 - arr2).empty?
+  def self.same?(arr1, arr2)
+    arr1.sort == arr2.sort
+  end
+
+  def self.char(word)
+    word.downcase.split(//)
   end
 
   def self.get_word_list(input)
     input.split(/\W+/)
   end
 
-  private_class_method :get_word_list, :char_arr, :same_arr?
+  private_class_method :same?, :char, :get_word_list
 end

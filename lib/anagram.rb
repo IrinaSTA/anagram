@@ -7,11 +7,11 @@ class Anagram
   private
 
   def process_input(input)
-    input.downcase.split(/\W+/)
+    input.split(/\W+/)
   end
 
   def process_word(word)
-    word.split(//)
+    word.downcase.split(//)
   end
 
   def anagram?(subject, word)

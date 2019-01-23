@@ -24,7 +24,7 @@ class AnagramChecker
   end
 
   def self.chars(word)
-    word.downcase.gsub(/\s+/, "").chars
+    word.downcase.gsub(/\W+/, "").chars
   end
 
   def self.get_word_arr(input)

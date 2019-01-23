@@ -57,5 +57,9 @@ describe AnagramChecker do
     it 'returns true if two strings are anagrams but have diff spacing' do
       expect(AnagramChecker.anagrams?('cat', 'c a t')).to eq(true)
     end
+
+    it 'returns true if two strings are anagrams but have diff punctuation' do
+      expect(AnagramChecker.anagrams?('cat', 'cat!')).to eq(true)
+    end
   end
 end

@@ -26,7 +26,7 @@ describe AnagramChecker do
     end
 
     it 'can process large number of inputs' do
-      # skip
+      skip
       n = 1_000_000
       input = 'word ' * n
       puts "Time to process #{n} records"
@@ -52,6 +52,10 @@ describe AnagramChecker do
 
     it 'returns false if two strings are not anagrams of each other' do
       expect(AnagramChecker.anagrams?('a cat on a mat', 'a cat on a ma')).to eq(false)
+    end
+
+    it 'returns true if two strings are anagrams but have diff spacing' do
+      expect(AnagramChecker.anagrams?('cat', 'c a t')).to eq(true)
     end
   end
 end

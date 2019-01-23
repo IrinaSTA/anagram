@@ -5,7 +5,9 @@ require 'simplecov-console'
 SimpleCov.formatter =
   SimpleCov::Formatter::MultiFormatter.new([SimpleCov::Formatter::Console])
 
-SimpleCov.start
+SimpleCov.start do
+  add_filter "spec/"
+end
 
 RSpec.configure do |config|
   config.expect_with :rspec do |expectations|

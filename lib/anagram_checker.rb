@@ -28,7 +28,7 @@ class AnagramChecker
   end
 
   def self.get_word_arr(input)
-    input.split(/\W+/)
+    input.split(/[^-a-zA-Z0-9]+/)
   end
 
   private_class_method :same?, :chars, :get_word_arr

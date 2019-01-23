@@ -21,6 +21,10 @@ describe AnagramChecker do
       expect(AnagramChecker.find_anagrams('listen', 'SILENT, APPLE, window')).to eq(['SILENT'])
     end
 
+    it 'ignores hyphenation' do
+      expect(AnagramChecker.find_anagrams('listen', 'SILE-NT, APPLE, window')).to eq(['SILE-NT'])
+    end
+
     it 'returns empty array when no anagrams are found' do
       expect(AnagramChecker.find_anagrams('listen', 'apple, window')).to eq([])
     end
@@ -60,6 +64,10 @@ describe AnagramChecker do
 
     it 'returns true if two strings are anagrams but have diff punctuation' do
       expect(AnagramChecker.anagrams?('cat', 'cat!')).to eq(true)
+    end
+
+    it 'ignores hyphenation' do
+      expect(AnagramChecker.anagrams?('rat-a-tat', 'ratatat')).to eq(true)
     end
   end
 end

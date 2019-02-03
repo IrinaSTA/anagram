@@ -18,6 +18,7 @@ The app determines anagrams using letters, numbers and underscores. Thus:
 - Clone this repo
 - Navigate to the directory root from your terminal
 - Run ```bundle install``` to install dependencies
+- Type in ```irb``` to start Ruby REPL
 - Follow the below example of using the app - please note there are two parameters for each function and the 'subject' word is always first.
 
 ![use](public/images/example.png)
